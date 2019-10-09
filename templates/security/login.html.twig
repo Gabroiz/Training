@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <title>Login | Bayer Training</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS da Página -->
+    <link rel="stylesheet" href="/css/login1.css" type="text/css">
+    <link rel="stylesheet" href="/css/default1.css" type="text/css">
+
+    <!--JS font awesome-->
+    <script src="https://kit.fontawesome.com/9011431d6c.js"></script>
+</head>
+<body>
+<div class="d-none d-md-block img-fundo">
+    <img src="/img/fundo-login.png" title="" alt="">
+</div>
+<main class="container">
+    <header class="cx-topo col-12 text-center pt-5">
+        <!--Disspositivos móveis-->
+        <a href="{{ path("home") }}"><h1 class="d-sm-none titulo mx-auto text-green display-4 text-uppercase font-weight-bold">Bayer Training</h1></a>
+        <!--Dispositivos SM para frente-->
+        <div class="d-none d-sm-block">
+            <a href="{{ path("home") }}" class="text-decoration-none"><h1 class="titulo mx-auto text-green display-4 text-uppercase font-weight-bold">Bayer Training</h1></a>
+        </div>
+    </header>
+
+    <section class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto ">
+        <div class="d-none mt-0"></div>
+
+        <form class="mt-5" name="form-login" method="post" action="{{ path("login") }}">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div class="mb-3">
+                    You are logged in as {{ app.user.username }}, <a href="{{ path('logout') }}">Logout</a>
+                </div>
+            {% endif %}
+            <div class="form-group pt-5">
+                <label class="h4 text-green font-weight-bold" for="inputLogin">Usuário</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white" id="usuario"><i class="fas fa-user-circle text-lightblue"></i></span>
+                    </div>
+                    <input class="form-control" type="text" value="{{ last_username }}" name="_username" id="inputLogin" aria-label="usuario" aria-describedby="usuario" placeholder="E-mail" required autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="h4 text-green font-weight-bold" for="inputPassword">Senha</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white" id="senha"><i class="fas fa-key text-lightblue"></i></span>
+                    </div>
+                    <input class="form-control" type="password" name="_password" id="inputPassword" aria-label="senha" aria-describedby="senha" placeholder="Senha" required>
+                </div>
+            </div>
+
+            <input type="hidden" name="_csrf_token"
+                   value="{{ csrf_token('authenticate') }}"
+            >
+
+            <div class=" w-75 mx-auto">
+                <button class="btn btn-success bg-green w-100 mt-3 " type="submit" name="entrar">Entrar</button>
+            </div>
+        </form>
+        <div class="w-75 mx-auto">
+            <a href="{{ path("cadastro") }}"><button class="btn btn-primary mt-3 w-100">Cadastre-se</button></a>
+        </div>
+    </section>
+</main>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+.menu{
+	border-bottom: 4px solid #56d400;
+}
+
+/*Define a altura dos blocos*/
+.bloco{
+	height: 85vh;
+}
+
+.active {
+	color: #56d400;
+}
+
+.hover-link-menu a:hover{
+    color: #56d400 !important;
+}
+/*Bloco1*/
+.img {
+	position: absolute;
+	z-index: -1;
+}
+.img-bl-1{
+	width: 100%;
+	height: 85vh;
+}
+
+.background-bl-1{
+	width: 100%;
+	height: 85vh;
+	background: #56d400;
+}
+
+.text-bl-1{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/*Bloco 2 CONHEÇA UM POUCO SOBRE NÓS*/
+
+/*Bloco 3 Bayer Training*/
+.img-fundo-bl-3 {
+	height: 85vh;
+	position: absolute;
+	opacity: 0.3;
+}
+.img-fundo-bl-3 img{
+	width: 100%;
+	height: 100%;
+}
+
+
+/*Bloco informativo*/
+.bloco-small{
+    height: 35vh;
+}
+.img-bl-informativo {
+    width: 100%;
+    height: 35vh;
+    position: absolute;
+    background-image: url("../img/aprenda.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.background-bl-informativo{
+    width: 100%;
+    height: 35vh;
+    background: #000000;
+}
+.opacidade-bl-informativo{
+    opacity: 0.8;
+    position: absolute;
+}
+
+/*Bloco 4 Participe*/
+.img-fundo-bl-4 {
+    height: 85vh;
+    position: absolute;
+    opacity: 0.3;
+}
+.img-fundo-bl-4 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.opacidade{
+	opacity: 0.6;
+	position: absolute;
+}
+
+#valores {
+	text-shadow: 0.1em 0.1em 0.2em black;
+	text-align: center;
+	margin-top: 70px;
+	color: white;
+}
+
+#explicacao p{
+	font-size: 1.4em;
+
+}
+
+#botao {
+	margin-top: 50px;
+	margin-bottom: 90px;
+}
+
+#experiencia {
+	text-shadow: 0.1em 0.1em 0.2em black;
+	text-align: center;
+	margin-top: 88px;
+	margin-bottom: 125px;
+	color: white;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+
+
+#engrenagem {
+	text-shadow: 0.1em 0.1em 0.2em black;
+	text-align: center;
+	margin-top: 190px;
+	color: #EEE0E5;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+
+
+#rodape {
+	display: block;
+	margin: 50px auto;
+}
+
+
+
+#faixa {
+background-color: #56d400;
+width: 100%;
+height: 5px;
+top: 10px;
+}
+
+#azul {
+	background: #00bdff;
+	height: 550px;
+}
+
+
+#cinza {
+	background: #DCDCDC;
+	height: 650px;
+}
+
+#azul-escuro {
+	background: #00354f;
+	height: 600px;
+
+}
+
+#img-engrenagem {
+
+	position: absolute;
+	opacity: 0.3;
+}

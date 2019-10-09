@@ -1,0 +1,105 @@
+/*Cores padrão da Bayer*/
+
+/*Textos*/
+.text-green{
+    color: #56d400;
+}
+.text-darkblue{
+    color: #00354f;
+}
+.text-lightblue{
+    color: #00bdff;
+}
+.text-darkgray{
+    color: darkgray;
+}
+.text-gray{
+    color: #dddddd;
+}
+.text-white{
+    color: #ffffff;
+}
+/*Hover*/
+.text-hover-white:hover{
+    color: white !important;
+}
+.text-hover-green:hover{
+    color: #56d400 !important;
+}
+.text-hover-darkblue:hover{
+    color: #00354f;
+}
+.text-hover-gray:hover{
+    color: #eee;
+}
+
+/*Backgrounds*/
+.bg-green{
+    background-color: #56d400 !important;
+}
+.bg-darkblue{
+    background-color: #00354f;
+}
+.bg-lightblue{
+    background-color: #00bdff;
+}
+.bg-darkgray{
+    background-color: darkgray;
+}
+.bg-white{
+    background-color: #ffffff;
+}
+.bg-gray{
+    background-color: #dddddd;
+}
+
+
+/*borda Arredondada*/
+.border-circle{
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+/*Z-index*/
+.z-index{
+    position: absolute;
+    z-index: 1;
+}
+.z-index-2{
+    position: absolute;
+    z-index: 2 !important;
+}
+
+/*hr*/
+.hr{
+    width: 100%;
+    height: 1px;
+}
+
+/*border*/
+.border-green{
+    border: 2px solid #56d400;
+}
+
+/*Text Shadow*/
+.text-shadow{
+    text-shadow: 2px 2px 8px black;
+}
+
+/*espaçamento de letras*/
+.letter-spacing{
+    letter-spacing: 1px;
+}
+
+/*Centralização Vertical*/
+.align-height-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Cursor*/
+.cursor-pointer:hover{
+    cursor: pointer;
+}

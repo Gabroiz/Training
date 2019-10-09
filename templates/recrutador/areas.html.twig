@@ -1,0 +1,45 @@
+{% extends 'baseRecrutador.html.twig' %}
+
+{% block title %} Áreas {% endblock %}
+
+{% block body %}
+    <main class="col-12 col-lg-9 offset-lg-3 float-right mt-5">
+        <div class="col-12 mt-3"><br></div>
+
+        <div class="container">
+            <header>
+                <h1 class="text-darkblue mt-5">Áreas <i class="fas fa-cubes ml-2"></i></h1>
+                <div class="bg-green w-100" style="height: 2px"></div>
+                <p class="mb-5 text-darkblue"><a href="painelRecrutadorIndex.php" class="ml-1 text-decoration-none text-darkgray text-hover-green">Home >> </a>Áreas</p>
+            </header>
+
+            <section class="col-12 my-5">
+                <h4 class="text-darkblue">Nova área</h4>
+                <hr class="bg-green my-4">
+
+                <a href="{{ path('recrutador_areaNew') }}"><button class="btn bg-green text-darkblue font-weight-bold text-decoration-none">Criar nova área</button></a>
+            </section>
+
+            <section class="col-12">
+                <h4 class="text-darkblue">Áreas</h4>
+                <hr class="bg-green my-4">
+
+                <section class="container card-columns mx-auto col-12 row">
+                    <div class="col-12 mx-auto">
+                        {% for area in areas %}
+                        <a href="painelRecrutadorEditarArea.php" class="text-decoration-none ml-3">
+                            <article for="pref-tecnologia" class="card shadow mb-5 ml-2" style="width: 18rem; height: 250px; cursor: pointer;">
+                                <div class="card-header text-center text-white display-3 bg-green"><i class="{{ area.icone }}"></i></div>
+                                <div class="card-body">
+                                    <h5 class="text-center card-title font-weight-bold">{{ area.nome }}</h5>
+                                </div>
+                            </article>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+
+{% endblock %}

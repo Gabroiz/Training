@@ -1,0 +1,43 @@
+{% extends 'baseGestor.html.twig' %}
+
+{% block title %} Cases {% endblock %}
+
+{% block body %}
+    <main class="col-12 col-lg-9 offset-lg-3 float-right mt-5">
+        <div class="col-12 mt-3"><br></div>
+
+        <section class="container">
+            <header>
+                <h1 class="text-darkblue mt-5">Cases <i class="fas fa-graduation-cap ml-2"></i></h1>
+                <div class="bg-green w-100" style="height: 2px"></div>
+                <p class="mb-5 text-darkblue"><a href="{{ path('gestor_home') }}" class="ml-1 text-decoration-none text-darkgray text-hover-green">Home >> </a>Cases</p>
+            </header>
+
+            <section class="container">
+                <section>
+                    <h3 class="text-darkblue mt-5">Novo case</h3>
+                    <hr>
+                    <a href="{{ path('gestor_newCaso') }}"><button class="btn bg-green text-darkblue font-weight-bold">Criar case</button></a>
+                </section>
+
+                <h3 class="text-darkblue mt-5">Meus cases</h3>
+                <hr>
+
+                {% for caso in casos %}
+                <article class="container">
+                    <div class="col-12 col-lg-11">
+                        <h4 class="text-darkblue">Case: {{ caso.titulo }}</h4>
+                        <time datetime="{{ caso.dataDeCriacao|date("d/m/Y") }}">{{ caso.dataDeCriacao|date("d/m/Y") }}</time>
+                    </div>
+                    <div class="col-6 col-lg-1">
+                        <form name="formExcluirCase" method="post" action="{{ path('gestor_deleteCaso', {'id' : caso.id}) }}">
+                            <input type="submit" name="excluirCase" value="Excluir" class="btn btn-danger mt-3 py-1 px-5 font-weight-bold">
+                        </form>
+                    </div>
+                    <hr>
+                </article>
+                {% endfor %}
+            </section>
+        </section>
+    </main>
+{% endblock %}

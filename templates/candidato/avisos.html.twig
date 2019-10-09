@@ -1,0 +1,68 @@
+{% extends 'baseCandidato.html.twig' %}
+
+{% block title %} Avisos {% endblock %}
+
+{% block body %}
+    <main class="col-12 col-lg-9 offset-lg-3 float-right mt-5">
+        <div class="col-12 mt-3"><br></div>
+
+        <div class="container">
+            <header>
+                <h1 class="text-darkblue mt-5">Avisos <i class="fas fa-comment-dots ml-2"></i></h1>
+                <div class="bg-green w-100" style="height: 2px"></div>
+                <p class="mb-5 text-darkblue"><a href="painelCandidatoIndex.php" class="ml-1 text-decoration-none text-darkgray text-hover-green">Home >> </a>Avisos</p>
+            </header>
+
+            <section>
+                <div class="container">
+                    <article>
+                        <?php
+                            for ($i = 0; $i < 6; $i++){
+                            ?>
+                        <div class="container row">
+                            <div class="col-12 col-lg-11">
+                                <h4 class="text-darkblue">Convite para entrevista!</h4>
+                                <time datetime="27/08/2019">27/08/2019</time>
+                            </div>
+                            <div class="col-6 col-lg-1">
+                                <button type="button" class="btn bg-green mt-3 py-1 border-green font-weight-bold"
+                                        data-toggle="modal" data-target="#exampleModalScrollable">novo
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-darkblue" id="exampleModalScrollableTitle">
+                                                    Convite para entrevista!</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-darkblue">
+                                                Olá Bruno!
+                                                Analisamos seu currículo e os seus progressos em nosso portal, gostaríamos
+                                                de convidar você para participar de uma entrevista
+                                                com nosso gestor Weslley Francis, da área de Sistemas no dia 16/09/2019.
+                                                Fique esperto, pois entraremos em contato com você por celular.
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar                                                  </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <?php
+                            }
+                        ?>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+{% endblock %}

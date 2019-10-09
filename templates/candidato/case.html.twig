@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="/css/cases1.css">
+    <link rel="stylesheet" href="/css/default1.css" type="text/css"> <!-- css padrão site-->
+
+    <title>Cases || Bayer Training</title>
+</head>
+<body>
+
+<section class="col-12 sombra bg-white"> <!--início cabeçalho -->
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <img class="navbar-brand" id="logo" src="/img/logo-Bayer.png" width="100" length="200">
+            </div>
+
+            <div class="col-2 offset-6">
+                <a href="{{ path('candidato_home') }}"><img class="float-right mt-4" src="/img/portinha.png" class="img-fluid" alt="PORTAL" width="120"></a>
+            </div>
+        </div>
+    </div>
+</section> <!--final cabeçalho -->
+
+<main class="corpo"><!--CORPO-->
+    <div class="text-center text-darkblue pt-5">
+        <h1>BAYER TRAINING</h1>
+        <h5 class="mt-4">Case:{{ caso.titulo }}</h5>
+    </div>
+
+    <div class="container col-md-6 col-md-offset-3 bg-darkblue my-3"></div>
+
+    <div class="container folha-branca py-4">
+        <section class="text-darkblue">
+            <h5 class="py-3">SITUAÇÃO:</h5>
+            <article class="container">
+                <p>
+                    {{ caso.descricao }}
+                </p>
+            </article>
+        </section>
+
+        <section class="mt-5 text-darkblue">
+            <header>
+                <h5>VÍDEO EXPLICATIVO:</h5>
+            </header>
+            <div class="col-12 col-lg-3 my-5">
+                <a href="{{ caso.videos }}" class="text-decoration-none" target="blank"><button class="btn w-100 bg-darkblue text-green font-weight-bold">Ver vídeo</button></a>
+            </div>
+        </section>
+
+        <section class="text-darkblue">
+            <h5>IMAGENS RELACIONADAS:</h5>
+            <div class="row container">
+                <div class="col-sm-4 container">
+                    <div class="card  my-3 sombra">
+                        <div  style="height: 180px;" class="card border-0 shadow">
+                            <figure>
+                                <img style="width: 100%; height: 180px;" src="/img/prog.png" alt="" title="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 container">
+                    <div class="card  my-3 sombra">
+                        <div  style="height: 180px;" class="card border-0 shadow">
+                            <figure>
+                                <img style="width: 100%; height: 180px;" src="/img/Modelagem-de-Dados.png" alt="" title="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 container">
+                    <div class="card  my-3 sombra">
+                        <div  style="height: 180px;" class="card border-0 shadow">
+                            <figure>
+                                <img style="width: 100%; height: 180px;" src="/img/prog2.png" alt="" title="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div id="arquivos">
+                <h5 class="text-darkblue">ARQUIVOS PARA AUXÍLIO:</h5>
+            </div>
+            <br>
+            <div class="my-3 container">
+                <a href="filesTxt/bugSqlPhp.txt" download="Bug SQL Injection with PHP"><i class="fas fa-file-alt text-white display-3 text-shadow    "></i></a>
+            </div>
+        </section>
+
+        <section>
+            <header id="inicio-teste" class="mb-5 text-darkblue">
+                <h5>CHEGOU SUA HORA!</h5>
+                <hr class="mt-4 bg-darkblue col-11 mx-auto">
+            </header>
+
+            <article class="my-4 col-11 mx-auto container">
+                <h4 class="text-darkblue">Pergunta:</h4>
+                <div class="container">
+                    <p class="text-darkblue text-justify font-weight-bold mt-4">
+                        {{ caso.pergunta }}
+                    </p>
+                </div>
+            </article>
+
+            <section class="mt-5 col-11 mx-auto container">
+                <h4 class="text-darkblue">Respostas:</h4>
+                <form name="respCase" method="post" action="{{ path('candidato_caseResolve', {'id' : caso.id}) }}">
+                    {% set respostas = caso.respostas %}
+                    {% for resposta in respostas %}
+                    <input type="radio" name="resposta" id="respCase{{ resposta.id }}" value="resp{{ resposta.id }}" class="d-none">
+                    <label for="respCase{{ resposta.id }}" class="text-white check-resp col-12 my-4 cursor-pointer">
+                        <div class="container">
+                            <div class="container py-3 bg-darkblue rounded check-alternativa">
+                                <div>
+                                    <p>
+                                       {{ resposta.descricao }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    {% endfor %}
+
+                    <div class="col-10 col-lg-4 mx-auto mt-5">
+                        <input type="submit" name="enviar" value="eu faria isso!" class="btn bg-green text-darkblue text-uppercase w-100 btn-lg">
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <div class="mb-5"></div>
+    </div><!--Container-->
+    <div class="p-1"></div>
+</main><!--CORPO-->
+
+
+<!-- JavaScript (Opcional) -->
+<!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>

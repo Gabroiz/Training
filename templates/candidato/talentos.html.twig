@@ -1,0 +1,92 @@
+{% extends 'baseCandidato.html.twig' %}
+
+{% block title %} Meus Talentos{% endblock %}
+
+{% block body %}
+    <main class="col-12 col-lg-9 offset-lg-3 float-right mt-5">
+        <div class="col-12 mt-3"><br></div>
+
+        <div class="container">
+            <header>
+                <h1 class="text-darkblue mt-5">Meu progresso<i class=" fas fa-star  ml-2"></i></h1>
+                <div class="bg-green w-100" style="height: 2px"></div>
+                <p class="mb-5 text-darkblue"><a href="{{ path('candidato_home') }}" class="ml-1 text-decoration-none text-darkgray text-hover-green">Home >> </a>Meu progresso</p>
+            </header>
+
+            <div class="container">
+                <section class="w-100 mx-auto">
+                    <canvas class="" id="myChart"></canvas>
+                </section>
+
+                <div class="col-12 mt-3"><br></div>
+                <hr class="hr">
+                <section>
+                    <h3 class="text-darkblue">Certificados</h3>
+                    <div class="mt-5 container">
+                        <a href="img/certificado-emitido.png" download="Certificado"><i class="fas fa-file-alt display-3 text-shadow text-white"></i></a>
+                    </div>
+                </section>
+
+                <div class="col-12 mt-3"><br></div>
+                <hr class="hr">
+                <section>
+                    <div class="col-8 mx-auto text-center mt-5">
+                        <h2 class="text-darkblue">Entenda a importância de se conhecer</h2>
+                    </div>
+                    <div class="col-12 col-lg-8 mx-auto">
+                        <iframe class="col-12 mx-auto mt-5" width="560" height="315" src="https://www.youtube.com/embed/jdi4ZglFgU8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="col-12 col-lg-9 offset-lg-3 float-right mt-5 p-2" >
+        <div class="container">
+            <div class="bg-green w-100 mb-4" style="height: 2px"></div>
+        </div>
+        <div class="col-3 col-sm-2 col-lg-1 mx-auto">
+            <img src="/img/logo-Bayer.png" style="height:70px;" title="Logo da Bayer" alt="Logo da bayer">
+        </div>
+    </footer>
+
+    <!-- Gráfico JavaScript chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+    <script>
+        var ctx = document.getElementById('myChart');
+        var conteudo = ['Comunicador', 'Executor', 'Analista', 'Planejador'];
+        var importancia = [2, 10, 5, 10, 0];
+        var colorConteudo = ['#1C2AFF', '#15D927', '#FFFF1D', '#ff0000',];
+
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: conteudo,
+                datasets: [{
+
+                    data: importancia,
+                    backgroundColor: colorConteudo,
+                    borderColor: '#ffffff',
+                    borderWidth: 1,
+                }]
+            },
+            options: {
+                layout: {
+                    padding: {
+                        left: 0,
+                        right: 0,
+                        top: 0,
+                        bottom: 0
+                    }
+                },
+            }
+        });
+    </script>
+
+{% endblock %}

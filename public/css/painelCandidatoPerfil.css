@@ -1,0 +1,28 @@
+body {
+	color: #00354f;
+	font-size: 1.2em;
+	font-family:Arial Narrow, sans-serif;
+}
+
+
+#botao {
+	background-color: #00354f;
+	color: #56d400;
+}
+
+#rodape {
+	display: block;
+	padding-top: 200px;
+	margin: 0 auto;
+}
+
+input[type='file'] {
+  display: none
+}
+
+/*Aparência do selector, nesse caso utilizando uma label */
+#alterar{
+	background-color: #00354f;
+	color: #56d400;
+	border-radius: 5px;
+}

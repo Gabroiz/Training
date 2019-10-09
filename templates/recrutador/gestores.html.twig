@@ -1,0 +1,93 @@
+{% extends 'baseRecrutador.html.twig' %}
+
+{% block title %} Gestores {% endblock %}
+
+{% block body %}
+    <main class="col-12 col-lg-9 offset-lg-3 float-right mt-5">
+        <div class="col-12 mt-3"><br></div>
+
+        <div class="container">
+            <header>
+                <h1 class="text-darkblue mt-5">Gestores <i class="fas fa-address-card ml-2"></i></h1>
+                <div class="bg-green w-100" style="height: 2px"></div>
+                <p class="mb-5 text-darkblue"><a href="painelRecrutadorIndex.php" class="ml-1 text-decoration-none text-darkgray text-hover-green">Home >> </a>Gestores</p>
+            </header>
+
+            <div class="container">
+                <section id="novoGestor">
+                    <div class="mt-4">
+                        <h4 class="mb-0 page-header text-darkblue">Adicione um gestor</h4>
+                    </div>
+
+                    <hr class="my-3">
+                    <div class="col-12">
+                        <a href="painelRecrutadorNovoGestor.php"><button class="btn bg-green text-darkblue font-weight-bold">Adicionar novo gestor</button></a>
+                    </div>
+                </section>
+
+                <div class="mt-4">
+                    <h4 class="mb-0 page-header text-darkblue">Encontre um gestor</h4>
+                </div>
+                <hr class="my-3">
+                <section class="col-12 mx-uto text-center">
+                    <form name="form-pesquisa-gestores" method="POST" action="#">
+                        <div class="col-11 mx-auto">
+                            <select class="custom-select border-success mt-4">
+                                <option selected>Filtrar pela área</option>
+                                <option value="1">TI</option>
+                                <option value="2">Agropecuária</option>
+                                <option value="3">Farmacia</option>
+                                <option value="3">Administração</option>
+                                <option value="3">Marketing</option>
+                                <option value="3">Recursos Humanos</option>
+                            </select>
+                        </div>
+                        <h5 class="my-3 text-darkblue">ou</h5>
+
+                        <div class="col-11 mx-auto">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="input-group">
+                                        <input class="form-control border-secondary border-success py-2" type="search" placeholder="Pesquisa por nome">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input class="btn bg-green mt-4 text-darkblue px-5 font-weight-bold" type="submit" name="pesquisar" value="Pesquisar">
+                    </form>
+                </section>
+
+                <section class="mt-5">
+                    <header>
+                        <h4 class="text-darkblue">Resultado por: <b>Todos</b></h4>
+                    </header>
+
+                    <article class="col-12 col-sm-10 my-5 mx-auto">
+                        <form role="form">
+                            <div class="card mb-3">
+                                <div class="row no-gutters">
+                                    <figure class="col-8 mx-auto col-md-6 text-center mt-3">
+                                        <img src="img/gabs.jpg" style="max-width:300px; height: 200px;" class="rounded-circle" alt="avatar">
+                                    </figure>
+
+                                    <div class="col-12 col-lg-6">
+                                        <div class="card-body">
+                                            <ul class="list-group">
+                                                <b class="mb-2">Nome:</b>
+                                                <a href="painelRecrutadorPerfilGestor.php" class="text-decoration-none"><li class="mb-2 list-group-item text-green">Gabriel Queiroz</li></a>
+
+                                                <b class="mb-2">Departamento:</b>
+                                                <li class="mb-2 list-group-item">TI</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

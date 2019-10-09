@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <title>Cadastro | Bayer Training</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS da Página -->
+    <link rel="stylesheet" href="/css/cadastroSimples.css" type="text/css">
+    <link rel="stylesheet" href="/css/default1.css" type="text/css">
+
+    <!--JS font awesome-->
+    <script src="https://kit.fontawesome.com/9011431d6c.js"></script>
+</head>
+<body>
+<main class="container pb-5">
+    <header class="cx-topo col-12 text-center pt-5">
+        <!--Disspositivos móveis-->
+        <a href="{{ path("home") }}" class="text-decoration-none"><h1 class="d-sm-none titulo mx-auto text-green display-4 text-uppercase font-weight-bold">Bayer Training</h1></a>
+        <p class="d-sm-none text-green h1 text-uppercase font-weight-normal">Participe!</p>
+        <!--Dispositivos SM para frente-->
+        <div class="d-none d-sm-block">
+            <a href="{{ path("home") }}" class="text-decoration-none"><h1 class="titulo mx-auto text-green display-4 text-uppercase font-weight-bold">Bayer Training</h1></a>
+            <p class="text-green display-4 text-uppercase font-weight-normal">Participe!</p>
+        </div>
+    </header>
+
+    <section class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+        <div class="d-none mt-0"></div>
+
+        <form class="mt-5" name="form-login" method="POST" action="{{ path("cadastro") }}">
+            <!--Nome-->
+            <div class="form-group pt-5">
+                <label class="h4 text-green font-weight-bold" for="nome">Nome</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white" id="nome"><i class="fas fa-user-circle text-lightblue"></i></span>
+                    </div>
+                    <input class="form-control" type="text" name="nome" id="nome" aria-label="nome" aria-describedby="nome" placeholder="Digite seu primeiro nome..." required>
+                </div>
+            </div>
+            <!-- Sobrenome -->
+            <div class="form-group">
+                <label class="h4 text-green font-weight-bold" for="sobrenome">Sobrenome</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white" id="sobrenome"><i class="fas fa-key text-lightblue"></i></span>
+                    </div>
+                    <input class="form-control" type="text" name="sobrenome" id="sobrenome" aria-label="sobrenome" aria-describedby="sobrenome" placeholder="Digite seu sobrenome..." required>
+                </div>
+            </div>
+            <!-- Data de Nascimento  -->
+            <div class="form-group">
+                <label class="h4 text-green font-weight-bold" for="dataDeNascimento">Data de Nascimento</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white" id="dataDeNascimento"><i class="fas fa-key text-lightblue"></i></span>
+                    </div>
+                    <input class="form-control" type="date" name="dataDeNascimento" id="dataDeNascimento" aria-label="dataDeNascimento" aria-describedby="dataDeNascimento" placeholder="Digite sua data de nascimento .." required>
+                </div>
+            </div>
+            <!--CPF-->
+            <div class="form-group">
+                <label class="h4 text-green font-weight-bold" for="cpf">CPF</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white" id="cpf"><i class="fas fa-check text-lightblue"></i></i></span>
+                    </div>
+                    <input class="form-control" type="text" name="cpf" id="cpf" aria-label="cpf" aria-describedby="cpf" placeholder="Digite seu CPF..." required>
+                </div>
+            </div>
+            <!-- Telefone -->
+            <div class="form-group">
+                <label class="h4 text-green font-weight-bold" for="telefone">Telefone</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white" id="telefone"><i class="fas fa-key text-lightblue"></i></span>
+                    </div>
+                    <input class="form-control" type="text" name="telefone" id="telefone" aria-label="telefone" aria-describedby="telefone" placeholder="Digite seu Telefone..." required>
+                </div>
+            </div>
+            <!--Email-->
+            <div class="form-group">
+                <label class="h4 text-green font-weight-bold" for="email">E-mail</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white text-lightblue" id="email"><i class="fas fa-at"></i></i></span>
+                    </div>
+                    <input class="form-control" type="text" name="email" id="email" aria-label="email" aria-describedby="email" placeholder="Digite seu melhor email..." required>
+                </div>
+            </div>
+            <!-- Senha -->
+            <div class="form-group">
+                <label class="h4 text-green font-weight-bold" for="senha">Senha</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white" id="senha"><i class="fas fa-key text-lightblue"></i></span>
+                    </div>
+                    <input class="form-control" type="password" name="senha" id="senha" aria-label="senha" aria-describedby="senha" placeholder="Digite sua senha..." required>
+                </div>
+            </div>
+
+            <div class=" w-75 mx-auto">
+                <input class="btn btn-success bg-green w-100 mt-3 border-btn" type="submit" name="Cadastrar" value="Cadastrar">
+            </div>
+        </form>
+    </section>
+    <footer class="p-5">
+
+    </footer>
+</main>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

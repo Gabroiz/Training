@@ -1,0 +1,126 @@
+{% extends 'baseCandidato.html.twig' %}
+
+{% block title %} Meu Perfil {% endblock %}
+
+{% block body %}
+    <!-- Corpo do painel MUDAR SOMENTE DAQUI PARA BAIXO!!!!!!!!!!! -->
+    <main class="col-12 col-lg-9 offset-lg-3 float-right mt-5">
+        <div class="col-12 mt-3"><br></div>
+
+        <div class="container">
+            <section id="meu-perfil">
+                <header>
+                    <h1 class="text-darkblue mt-5">Meu perfil <i class="fas fa-user ml-2"></i></h1>
+                    <div class="bg-green w-100" style="height: 2px"></div>
+                    <p class="mb-5 text-darkblue"><a href="{{ path('candidato_home') }}" class="ml-1 text-decoration-none text-darkgray text-hover-green">Home >> </a>Meu perfil</p>
+                </header>
+
+                <form role="form" class="row">
+                    <div class="col-12 col-lg-6 float-right align-height-center">
+                        <div class="text-center">
+                            <img src="/img/bruno2.jpg" class="rounded-circle" width="46%" alt="avatar">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <div class="form-group float-label-control">
+                            <label for="">Nome</label>
+                            <input type="text" class="form-control border border-success" placeholder="" value="Bruno" disabled>
+                        </div>
+                        <div class="form-group float-label-control">
+                            <label for="">Último nome</label>
+                            <input type="text" class="form-control border border-success" placeholder="" value="Caitano" disabled>
+                        </div>
+                        <div class="form-group float-label-control">
+                            <label for="">Data de nascimento</label>
+                            <input type="text" class="form-control border border-success" placeholder="" value="24/05/1999" disabled>
+                        </div>
+                        <div class="form-group float-label-control">
+                            <label for="">E-mail</label>
+                            <input type="email" class="form-control border border-success" placeholder="" value="bruno.caitano@yahoo.com.br" disabled>
+                        </div>
+                        <div class="form-group float-label-control">
+                            <label for="">Telefone</label>
+                            <input type="text" class="form-control border border-success" placeholder="" value="(11) 2524-9658" disabled>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section id="curriculo">
+                <div class="mt-4">
+                    <h4 class="mb-0 page-header text-darkblue">Endereço</h4>
+                </div>
+
+                <div class="hr bg-green my-3"></div>
+
+                <form role="form" class="">
+                    <div class="my-3">
+                        <label for="" class="">CEP</label>
+                        <input type="text" class="form-control border border-success" placeholder="" value="08253-010" disabled>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="" class="">Endereço</label>
+                            <input type="text" class="form-control border border-success" placeholder="" value="Rua Alfredo Ricci" disabled>
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="">Cidade</label>
+                            <input type="text" class="form-control border border-success" placeholder="" value="São Paulo" disabled>
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="">UF</label>
+                            <input type="text" class="form-control border border-success" placeholder="" value="SP" disabled>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section id="bl-curriculo">
+                <div class="mt-4">
+                    <h4 class="page-header text-darkblue">Currículo</h4>
+                </div>
+                <hr class="bg-green my-3">
+
+                <div class="col-12">
+                    <a href="filesTxt/bugSqlPhp.txt" download="Bug SQL Injection with PHP" class="ml-2"><i class="fas fa-file-alt text-white display-3 text-shadow"></i></a>
+                </div>
+            </section>
+
+            <section id="bl-area-interesse">
+                <div class="mt-4">
+                    <h4 class="page-header text-darkblue">Área de interesse</h4>
+                </div>
+                <hr class="my-3 bg-green">
+
+                <div class="col-4 container">
+                    <div class="my-3">
+                        <button class="bg-darkblue text-green py-2 border-0 w-100 shadow">Analista de Sistemas</button>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="mt-4">
+                    <h4 class="page-header text-darkblue">Alterar dados</h4>
+                </div>
+                <hr class="my-3 bg-green">
+
+                <a href="painelCandidatoEditPerfil.php"><button class="btn bg-green text-darkblue font-weight-bold">Alterar dados</button></a>
+            </section>
+
+            <footer>
+                <div class="container col-3 col-md-2 col-lg-1 mx-auto mt-5 mb-3">
+                    <div>
+                        <a href=""><img src="img/logo-Bayer.png" width="70"></a>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        </div>
+    </main>
+
+{% endblock %}

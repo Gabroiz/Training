@@ -1,0 +1,79 @@
+{% extends 'baseRecrutador.html.twig' %}
+
+{% block title %} Nova Area {% endblock %}
+
+{% block body %}
+    <main class="col-12 col-lg-9 offset-lg-3 float-right mt-5">
+        <div class="col-12 mt-3"><br></div>
+
+        <div class="container">
+            <section>
+                <header>
+                    <h1 class="text-darkblue mt-5">Nova área <i class="fas fa-cubes ml-2"></i></h1>
+                    <div class="bg-green w-100" style="height: 2px"></div>
+                    <p class="mb-5 text-darkblue"><a href="painelRecrutadorIndex.php" class="ml-1 text-decoration-none text-darkgray text-hover-green">Home >> </a><a href="painelRecrutadorAreas.php" class="ml-1 text-decoration-none text-darkgray text-hover-green">Áreas >> </a>Nova Área</p>
+                </header>
+
+                <form role="form" class="row" method="post" action="{{ path('recrutador_areaNew') }}">
+                    <div class="col-12">
+                        <div class="form-group float-label-control col-12 col-lg-6">
+                            <label for="">Nome da área</label>
+                            <input type="text" name="nomeArea" class="form-control border border-success" placeholder="Digite o nome da área" value="">
+                        </div>
+                        <div class="form-group float-label-control col-12 col-lg-8">
+                            <label for="">Icone</label>
+                            <div class="row container">
+                                <input type="text" name="iconeArea" class="form-control border border-success col-8" placeholder="Insira o nome do icone. Ex: fas fa-cubes" value="">
+                                <button type="button" class="btn bg-green text-darkblue font-weight-bold rounded-circle ml-4" data-toggle="modal" data-target="#exampleModalScrollable">?</button>
+                            </div>
+                            <!-- corpo do modal -->
+                            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalScrollableTitle">Aprenda a inserir o icone da área</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="font-weight-bold">1° passo:</p>
+                                            <p>Acessar o site Font Awesome (https://fontawesome.com/icons) e escolher o icone desejado</p>
+
+                                            <p class="font-weight-bold">2° passo:</p>
+                                            <p>Na página do icone desejado, copiar o nome do icone (ex: fab fa-accessible-icon)</p>
+                                            <figure>
+                                                <img class="w-100" src="img/ajuda-inserir-icone.png" alt="Imagem para ajudar o Recrutador inserir um icone para uma nova área" title="Imagem para ajudar o Recrutador inserir um icone para uma nova área">
+                                                <img class="w-100 mt-3" src="img/ajuda-inserir-icone-zoom.png" alt="Imagem para ajudar o Recrutador inserir um icone para uma nova área ZOOM" title="Imagem para ajudar o Recrutador inserir um icone para uma nova área ZOOM">
+                                            </figure>
+                                            <p><b>Atenção!</b> Copiar somente o nome do icone, O QUE ESTÁ ENTRE ASPAS!</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <hr class="my-5">
+
+                <div class="col-10 col-lg-4  mx-auto">
+                    <button class="btn bg-green text-darkblue font-weight-bold col-12" type="submit" name="cadastrar" value="cadastrar">Criar Nova Area</button>
+                </div>
+                </form>
+            </section>
+
+            <hr class="hr bg-green my-5">
+
+            <footer>
+                <div class="container col-3 col-md-2 col-lg-1 mx-auto mt-5 mb-3">
+                    <div>
+                        <a href=""><img src="/img/logo-Bayer.png" width="70"></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+{% endblock %}

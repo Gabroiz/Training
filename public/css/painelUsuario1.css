@@ -1,0 +1,51 @@
+/*Topo*/
+.border-bbottom{
+    border-bottom: 3px solid #56d400;
+}
+.logo-topo{
+    width: 50px;
+}
+/*Menu lateral*/
+.menu-mobile{
+    padding: 27px 0px;
+}
+.icon-menu-responsive{
+    width: 40px;
+    height: 40px;
+}
+.menu-lateral{
+    height: 100vh;
+    position: fixed;
+}
+
+.img-usuario{
+    width: 100%;
+    height: 165px;
+    border-radius: 100%;
+}
+
+.hr-menu-lateral{
+
+}
+
+.link-menu-lateral, .link-menu-lateral-sair{
+    color: darkgray;
+    font-size: 1.2em;
+}
+.link-menu-lateral:hover{
+    color: #56d400;
+    text-decoration: none;
+}
+.link-menu-lateral-sair:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.bottom-0{
+    position: absolute;
+    bottom: 0;
+}
+
+.hover_h1 a:hover {
+    color: #00354f;
+}

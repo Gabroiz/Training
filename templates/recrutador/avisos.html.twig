@@ -1,0 +1,128 @@
+{% extends 'baseRecrutador.html.twig' %}
+
+{% block title %} Avisos {% endblock %}
+
+{% block body %}
+    <main class="col-12 col-lg-9 offset-lg-3 float-right mt-5">
+        <div class="col-12 mt-3"><br></div>
+
+        <section class="container">
+            <header>
+                <h1 class="text-darkblue mt-5">Avisos <i class="fas fa-bullhorn ml-2"></i></h1>
+                <div class="bg-green w-100" style="height: 2px"></div>
+                <p class="mb-5 text-darkblue"><a href="painelRecrutadorIndex.php" class="ml-1 text-decoration-none text-darkgray text-hover-green">Home >> </a>Avisos</p>
+            </header>
+
+            <div class="container">
+                <section id="novoFeedback">
+                    <div class="mt-4">
+                        <h4 class="mb-0 page-header text-darkblue">Novo aviso</h4>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="col-12">
+                        <a href="painelRecrutadorNovoAviso.php"><button class="btn bg-green text-darkblue font-weight-bold">Criar novo aviso</button></a>
+                    </div>
+                </section>
+
+                <div class="mt-4">
+                    <h4 class="mb-0 page-header text-darkblue">Encontre um aviso</h4>
+                </div>
+                <hr class="my-3">
+                <section class="col-12 mx-uto text-center mb-5">
+                    <form name="form-pesquisa-gestores" method="POST" action="#">
+                        <div class="col-11 mx-auto">
+                            <select class="custom-select border-success mt-4">
+                                <option selected>Filtrar pela área</option>
+                                <option value="1">TI</option>
+                                <option value="2">Agropecuária</option>
+                                <option value="3">Farmacia</option>
+                                <option value="3">Administração</option>
+                                <option value="3">Marketing</option>
+                                <option value="3">Recursos Humanos</option>
+                            </select>
+                        </div>
+                        <h5 class="my-3 text-darkblue">ou</h5>
+
+                        <div class="col-11 mx-auto">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="">
+                                        <label class="float-left text-darkblue">Pesquise pela data</label>
+                                        <input class="form-control border-secondary border-success py-2" type="date" placeholder="Pesquise pela data">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input class="btn bg-green mt-4 text-darkblue px-5 font-weight-bold" type="submit" name="pesquisar" value="Pesquisar">
+                    </form>
+                </section>
+
+                <hr clas="my-5">
+
+                <?php
+                    for ($i = 0; $i < 6; $i++) {
+                        ?>
+                <section id="avisos" class="mt-5">
+                    <div class="container row">
+                        <div class="col-12 col-lg-11">
+                            <h4 class="text-darkblue">Evento gratuito!</h4>
+                            <p class="text-darkblue"><b>Para:</b> Todos</p>
+                            <time datetime="27/08/2019">27/08/2019</time>
+                        </div>
+                        <div class="col-6 col-lg-1">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn bg-green mt-3 py-1 border-green font-weight-bold"
+                                    data-toggle="modal" data-target="#exampleModalScrollable">Ver
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-darkblue" id="exampleModalScrollableTitle">
+                                                Evento gratuito!</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-darkblue">
+                                            Há 10 anos, o maior e mais qualificado evento de líderes de Segurança da
+                                            Informação do Brasil
+
+                                            A edição desse ano do Congresso Security Leaders vai reunir os
+                                            principais líderes e influencers da Segurança da Informação do Brasil!
+                                            Serão dois dias de profundos debates diante de um cenário desafiador
+                                            como Lei Geral de Proteção de Dados, Criação da Autoridade Nacional de
+                                            Proteção de Dados, Vazamento de Informações Sensíveis, Respostas a
+                                            Incidentes, Chegada do 5G e Novas Vulnerabilidades.
+
+
+                                            Entrada gratuita para usuários de tecnologia com e-mail corporativo
+                                            válido R$ 0
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </section>
+                <?php
+                    }
+                ?>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

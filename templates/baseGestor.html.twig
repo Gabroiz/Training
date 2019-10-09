@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/img/bayer.ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- CSS da Página -->
+    <link rel="stylesheet" href="/css/painelUsuario1.css" type="text/css"> <!-- css do painel padrão -->
+    <link rel="stylesheet" href="/css/default1.css" type="text/css"> <!-- css padrão site-->
+
+    <title>{% block title %}{% endblock %}</title>
+    <!--JS font awesome-->
+    <script src="https://kit.fontawesome.com/9011431d6c.js"></script>
+</head>
+<body>
+
+<!-- NÃO MEXER -->
+<!-- Topo -->
+<header class="col-10 offset-2 col-lg-9 offset-lg-3 position-fixed border-bbottom bg-white py-3  z-index-2">
+    <div class="row">
+        <div class="col-11">
+            <h2 class="pt-1 hover_h1"><a href="{{ path('gestor_home') }}" class="text-decoration-none text-darkblue ">Olá {{ app.user.nome }}!</a></h2>
+        </div>
+        <div class="col-1">
+            <img class="float-right logo-topo mr-3" src="/img/logo-Bayer.png" title="Logo da Bayer" alt="Logo da bayer">
+        </div>
+    </div>
+</header>
+
+
+<!-- menu lateral versão mobile sm e md -->
+<nav class="navbar navbar-expand-lg navbar-ligh d-lg-none col-12 position-fixed border-bbottom bg-green menu-mobile z-index">
+    <button class="navbar-toggler border-0 col-1 ml-sm-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i style="margin-left: 20px;" class="fas fa-bars text-darkblue"></i>
+    </button>
+
+    <div class="collapse navbar-collapse bg-darkblue py-5 mt-5 col-12 m-0" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item py-1">
+                <a href="{{ path('gestor_meuPerfil') }}" class="link-menu-lateral p-2"><i class=" fas fa-user-alt mr-4"></i>Meu Perfil</a>
+                <hr>
+            </li>
+            <li class="nav-item py-1">
+                <a href="{{ path('gestor_casos') }}" class="link-menu-lateral p-2"><i class=" fas fa-list-alt mr-4"></i>Cases</a>
+                <hr>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- menu lateral versão desktop lg e xl -->
+<nav class="d-none d-lg-block col-3 menu-lateral bg-darkblue">
+    <div class="container">
+        <header class="w-50 rounded-circle mx-auto mt-5" style=" height: 180px">
+            <figure>
+                <img class="img-usuario" src="/img/gabs.jpg" title="Foto do Usuário" alt="Foto do Usuário">
+            </figure>
+        </header>
+
+        <div class="w-100 my-5 text-green" style="border-bottom: 1px solid #56d400;">Gestor</div>
+
+        <ul class="list-group">
+            <a href="{{ path('gestor_meuPerfil') }}" class="link-menu-lateral p-2"><i class="fas fa-user-alt mr-4"></i>Meu Perfil</a>
+            <a href="{{ path('gestor_casos') }}" class="link-menu-lateral p-2"><i class=" fas fa-list-alt mr-4"></i>Cases</a>
+            <div class="bottom-0 pb-3">
+                <a href="{{ path('logout') }}" class="link-menu-lateral-sair p-2"><i class="fas fa-sign-out-alt mr-4"></i>Sair</a>
+            </div>
+        </u
+    </div>
+</nav>
+<!-- Fim NÃO MEXER -->
+
+{% block body %}{% endblock %}
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+.sombra {
+    box-shadow: 1px 1px 6px black;
+    -webkit-box-shadow: 1px 1px 6px black;
+    -moz-box-shadow: 1px 1px 6px black;
+}
+
+.corpo {
+    background-image: linear-gradient(to top, #00bdff, #008aba);;
+}
+
+.folha-branca {
+    background-color: rgba(255,255,255,0.5);
+}
+
+.video {
+    box-shadow: 1px 1px 6px black;
+    -webkit-box-shadow: 1px 1px 6px black;
+    -moz-box-shadow: 1px 1px 6px black;
+}
+
+#carrosel {
+    background-color: #00354f;
+}
+
+#arquivos {
+    margin-top: 60px;
+}
+
+#inicio-teste {
+    margin-top: 100px;
+    text-align: center;
+}
+
+#inicio-teste h4{
+    font-size: 1.6em;
+}
+
+#box{
+    /*definimos a largura do box*/
+    width:85%;
+    /* definimos a altura do box */
+    height:15%;
+    /* definimos a cor de fundo do box */
+    background-color:#00354f;
+    /* definimos o quão arredondado irá ficar nosso box */
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+#box p {
+    font-size: 100%;
+}
+
+#botao {
+    background: #56d400;
+}
+
+.mg-top{
+    margin-bottom: -60px !important;
+}
+.bloco-verde {
+    /*definimos a largura do box*/
+    width: 5%;
+    /* definimos a altura do box */
+    height: 20px;
+    /* definimos a cor de fundo do box */
+    background-color: green;
+    /* definimos o quão arredondado irá ficar nosso box */
+    border-radius: 3px;
+    margin-top: 50px;
+    margin-left: 10% !important;
+}
+
+/*Check Alternativas*/
+
+input:checked + .check-resp .check-alternativa{
+    border:5px solid #56d400;
+}
+
+.check-alternativa:hover{
+    border:5px solid #56d400;
+}

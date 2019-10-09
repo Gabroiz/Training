@@ -1,0 +1,41 @@
+{% extends 'baseCandidato.html.twig' %}
+
+{% block title %} Casos {% endblock %}
+
+{% block body %}
+
+    <!-- Corpo do painel MUDAR SOMENTE DAQUI PARA BAIXO!!!!!!!!!!! -->
+    <main class="col-12 col-lg-9 offset-lg-3 float-right mt-5">
+        <div class="col-12 mt-3"><br></div>
+
+        <section class="container">
+            <header>
+                <h1 class="text-darkblue mt-5">Cases <i class="fas fa-graduation-cap ml-2"></i></h1>
+                <div class="bg-green w-100" style="height: 2px"></div>
+                <p class="mb-5 text-darkblue"><a href="painelCandidatoIndex.php" class="ml-1 text-decoration-none text-darkgray text-hover-green">Home >> </a>Cases</p>
+            </header>
+
+            <section class="container">
+                <h3 class="text-darkblue mt-5"></h3>
+                <hr>
+
+                {% for caso in casos %}
+                <article class="container">
+                    <div class="col-12 col-lg-11">
+                        <h4 class="text-darkblue">Case: {{ caso.titulo }}</h4>
+                        <time datetime="{{ caso.dataDeCriacao|date("d/m/Y") }}">{{ caso.dataDeCriacao|date("d/m/Y") }}</time>
+                    </div>
+                    <div class="col-6 col-lg-1">
+                        <a href="{{ path('candidato_caseAcessa', {'id' : caso.id }) }}"
+                           class="text-decoration-none text-darkblue">
+                        <button type="button" class="btn bg-green mt-3 py-1 px-5 border-green font-weight-bold">
+                            Acessar</button></a>
+                    </div>
+                    <hr>
+                </article>
+                {% endfor %}
+            </section>
+        </section>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,161 @@
+{% extends 'baseCandidato.html.twig' %}
+
+{% block title %} Meu Perfil {% endblock %}
+
+{% block body %}
+    <main class="col-12 col-lg-9 offset-lg-3 float-right mt-5">
+        <div class="col-12 mt-3"><br></div>
+
+        <div class="container">
+            <form name="form-dados-candidato" method="post" action="#">
+                <section id="meu-perfil">
+                    <header>
+                        <h1 class="text-darkblue mt-5">Alterar perfil <i class="fas fa-user ml-2"></i></h1>
+                        <div class="bg-green w-100" style="height: 2px"></div>
+                        <p class="mb-5 text-darkblue"><a href="painelCandidatoIndex.php" class="ml-1 text-decoration-none text-darkgray text-hover-green">Home >> </a><a href="painelCandidatoPerfil.php" class="ml-1 text-decoration-none text-darkgray text-hover-green">Meu perfil >> </a>Alterar perfil</p>
+                    </header>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-6 float-right align-height-center">
+                            <div class="text-center">
+                                <img src="img/bruno2.jpg" class="rounded-circle" width="46%" alt="avatar">
+                                <label for="foto" id="alterar" class="col-8 col-md-6 col-lg-6 m-4 p-2 cursor-pointer">Alterar foto</label>
+                                <input id="foto" type="file" name="myFile">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group float-label-control">
+                                <label for="">Nome</label>
+                                <input type="text" class="form-control border border-success" placeholder="" value="Bruno">
+                            </div>
+                            <div class="form-group float-label-control">
+                                <label for="">Último nome</label>
+                                <input type="text" class="form-control border border-success" placeholder="" value="Caitano">
+                            </div>
+                            <div class="form-group float-label-control">
+                                <label for="">Data de nascimento</label>
+                                <input type="text" class="form-control border border-success" placeholder="" value="24/05/1999">
+                            </div>
+                            <div class="form-group float-label-control">
+                                <label for="">CPF</label>
+                                <input type="text" class="form-control border border-success" placeholder="" value="45448558174">
+                            </div>
+                            <div class="form-group float-label-control">
+                                <label for="">E-mail</label>
+                                <input type="email" class="form-control border border-success" placeholder="" value="bruno.caitano@yahoo.com.br">
+                            </div>
+                            <div class="form-group float-label-control">
+                                <label for="">Telefone</label>
+                                <input type="text" class="form-control border border-success" placeholder="" value="(11) 2524-9658">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="bl-descricao">
+                    <div class="mt-4">
+                        <h4 class="page-header text-darkblue">Descrição</h4>
+                    </div>
+                    <hr class="bg-green my-3">
+
+                    <div class="form-group float-label-control container">
+                        <label for="">Um pouco sobre mim...</label>
+                        <textarea class="form-control border border-success" style="min-height: 200px;">Busco uma vaga no mercado de trabalho, numa empresa onde eu possa me desenvolver profissionalmente, demonstrar minhas competências e habilidades, técnicas e emocionais e, em conjunto com os meus colegas e gestores, eu possa colaborar para o crescimento da organização e do grupo.</textarea>
+                    </div>
+                </section>
+
+                <section id="bl-Endereco">
+                    <div class="mt-4">
+                        <h4 class="mb-0 page-header text-darkblue">Endereço</h4>
+                    </div>
+
+                    <div class="hr bg-green my-3"></div>
+
+                    <div class="container">
+                        <div class="my-3">
+                            <label for="" class="">CEP</label>
+                            <input type="text" class="form-control border border-success" placeholder="" value="08253-010">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="" class="">Endereço</label>
+                                <input type="text" class="form-control border border-success" placeholder="" value="Rua Alfredo Ricci ">
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="">Cidade</label>
+                                <input type="text" class="form-control border border-success" placeholder="" value="São Paulo">
+                            </div>
+
+                            <div class="col-lg-2">
+                                <label for="">UF</label>
+                                <input type="text" class="form-control border border-success" placeholder="" value="SP">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="bl-curriculo">
+                    <div class="mt-4">
+                        <h4 class="page-header text-darkblue">Currículo</h4>
+                    </div>
+                    <div class="hr bg-green my-3"></div>
+
+                    <div class="col-12 col-lg-4">
+                        <div class="text-center">
+                            <label for="foto" id="alterar" class="col-12 py-2 cursor-pointer">Adicionar Currículo</label>
+                            <input id="foto" type="file" name="myFile">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="bl-area-interesse">
+                    <div class="mt-4">
+                        <h4 class="page-header text-darkblue">Área de interesse</h4>
+                    </div>
+                    <div class="hr bg-green my-3"></div>
+
+                    <div class="col-12 col-lg-4">
+                        <select class="custom-select border-success mt-4">
+                            <option selected>Escolha uma área</option>
+                            <option value="1">TI</option>
+                            <option value="2">Agropecuária</option>
+                            <option value="3">Farmacia</option>
+                            <option value="3">Administração</option>
+                            <option value="3">Marketing</option>
+                            <option value="3">Recursos Humanos</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section id="bl-seguranca">
+                    <div class="mt-4">
+                        <h4 class="page-header text-darkblue">Segurança</h4>
+                    </div>
+                    <hr class="bg-green my-3">
+
+                    <div class="form-group float-label-control container">
+                        <label for="">Segurança</label>
+                        <input type="password" class="form-control border border-success col-12 col-lg-4" name="senha" value="senha">
+                    </div>
+                </section>
+
+                <section class="my-5">
+                    <div class="hr bg-green my-3"></div>
+                    <div class="col-12 col-lg-4 mx-auto">
+                        <input type="submit" name="alterar" value="Alterar dados" class="btn bg-green text-darkblue w-100 py-2 font-weight-bold">
+                    </div>
+                </section>
+            </form>
+
+            <footer>
+                <div class="container col-3 col-md-2 col-lg-1 mx-auto mt-5 mb-3">
+                    <div>
+                        <a href=""><img src="img/logo-Bayer.png" width="70"></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+{% endblock %}

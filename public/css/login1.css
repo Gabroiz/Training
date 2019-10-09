@@ -1,0 +1,19 @@
+body{
+    background: #00354f;
+}
+
+.img-fundo img{
+    float: left;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+/*header*/
+.cx-topo{
+
+}
+.titulo{
+    letter-spacing: 5px;
+}
