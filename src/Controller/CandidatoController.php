@@ -87,11 +87,11 @@ class CandidatoController extends AbstractController
      */
     public function resolverCase(Request $request, Caso $caso)
     {
-        $a = $this->getUser();
+        $logado = $this->getUser();
 
         if(!empty($request->request->get('enviar')))
         {
-            $a;
+
         }
 
         return $this->render('candidato/index.html.twig');
